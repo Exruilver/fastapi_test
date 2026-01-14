@@ -9,7 +9,7 @@ from fastapi import FastAPI
 
 
 app = FastAPI()
-#99999 撒地方
+#99999
 
 
 # 当需要的参数是若干种数据类型中的一种时，可以使用 | 符号来表示多种类型
