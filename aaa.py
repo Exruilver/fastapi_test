@@ -57,7 +57,7 @@ def page_limit(p5ge, limit):        # 函数中的两个是参数名，也是 ur
 
 # 下面这种情况是查询参数同时设置了数据类型和默认值
 @app.get("/query2")
-def page_limit2(page: int, limit = None):
+def page_limit2(page: int, limit = None):      # 注意默认值参数只能放在最右边
     if limit:
         return {
             "page": page,
@@ -102,6 +102,9 @@ def read_item3(item_id: int = 42):
 
 
 
+
+
+# 路径参数不可以设置默认值
 # 对于参数传还是不传，可以使用 None 来表示参数可选
 @app.get("/mix4/")
 def read_item4(item_id: int = None):
