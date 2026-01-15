@@ -70,3 +70,25 @@ def read_user_item(
     item_id: str = Path(...,min_length=3, max_length=12, description="物品 ID 长度必须在 3 到 12 之间")
 ):
     return {"user_id": user_id, "item_id": item_id}
+
+
+
+# 当路径参数是一个枚举类型时，可以使用 Enum 类进行校验
+# 应用场景：比如模型名称只能是固定的几种，多选一
+from enum import Enum
+class ModelName(str, Enum):
+    alexnet = "alexnet"
+    resnet = "resnet"
+    lenet = "lenet"
+
+@app.get("/models/{model_name}")
+def get_model(model_name: ModelName = Path(...,description="模型名称只能是 alexnet、resnet、lenet 之一")):
+    """
+        这里的路径参数 model_name 是一个枚举类型
+        只能是枚举类 ModelName 中定义的值之一
+    """
+    return {"model_name": model_name}   
+
+
+
+

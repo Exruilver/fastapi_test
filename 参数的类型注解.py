@@ -19,6 +19,8 @@ def read_item0(item_id: int | str):
     return {"item_id": item_id}
 
 
+
+
 @app.get("/mix1/{item_id}")
 def read_item1(item_id: Union[int, bool]):
 
@@ -36,11 +38,15 @@ def read_item1(item_id: Union[int, bool]):
 """
 
 
-# Union 不可用于设置默认值
+
+
+# 路径参数不可以设置默认值
 @app.get("/mix2/{item_id}")
 def read_item2(item_id: Union[int, str] = 42):
     """ 这种写法会报错 """
     return {"item_id": item_id}
+
+
 
 
 # 查询参数中可以使用默认值，包括 Union 类型
