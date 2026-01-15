@@ -74,12 +74,12 @@ def read_user_item(
 
 
 # 当路径参数是一个枚举类型时，可以使用 Enum 类进行校验
-# 应用场景：比如模型名称只能是固定的几种，多选一
+# 应用场景：比如模型名称只能是固定的几种，多选一 ALWNET、RESNET、LENET
 from enum import Enum
 class ModelName(str, Enum):
-    alexnet = "alexnet"
-    resnet = "resnet"
-    lenet = "lenet"
+    ALWNET = "alexnet"
+    RESNET = "resnet"
+    LENET = "lenet"
 
 @app.get("/models/{model_name}")
 def get_model(model_name: ModelName = Path(...,description="模型名称只能是 alexnet、resnet、lenet 之一")):
