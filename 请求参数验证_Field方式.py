@@ -2,11 +2,10 @@
 # Field 字段是需要写在定义的数据模型类中的
 # 而不是直接写在函数的参数中
 
-from fastapi import FastAPI
+from fastapi import FastAPI,Form
 from pydantic import Field,BaseModel
 
 app = FastAPI()
-
 
 
 
@@ -94,3 +93,9 @@ def read_item6(numbers: Item6):
 
 
 # ============================                        更多 list 的用法见文件 参数的类型注解.py                        ============================ #
+
+
+# 这段代码是我在验证表单数据和 json 数据发起的 http 请求中，参数 -d 和 -H 的区别，和上述代码没有关联
+@app.post("/login")
+def login(username: str = Form(...), password: str = Form(...)):
+    return {"username": username}

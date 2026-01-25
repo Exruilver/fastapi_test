@@ -1,11 +1,15 @@
-from fastapi import FastAPI, Path, Form
+from fastapi import FastAPI, Form
 from pydantic import BaseModel
 from typing import Annotated
+
+# 在 http 请求中，如果我们要传输的数据不是 json 格式的而是表单类型的数据，
+# 那么就需要用到 Form 了
 
 app = FastAPI()
 
 
 # 基础方式
+# 下面使用 Form，用法和 Field、Query、Path 类似
 @app.post("/login1")
 def login1(username: str = Form(), password : int = Form()):
     return {"用户名": username, "密码": password}
