@@ -32,7 +32,7 @@ def read_item3(item_id: str = Path(...,min_length=3,max_length=12)):
 
 # 数值大小进行校验
 @app.get("/items4/{item_id}")
-def read_item(item_id: float = Path(...,gt=3,lt=10)):
+def read_item4(item_id: float = Path(...,gt=3,lt=10)):
     return {"item_id": item_id}
 
 

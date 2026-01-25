@@ -20,7 +20,8 @@ def login1(username: str = Form(), password : int = Form()):
 class User2(BaseModel):
     username: str
     password: int
-# 
+
+
 @app.post("/login2")
 def login2(user: Annotated[User2, Form()]):
     return user
@@ -31,7 +32,8 @@ def login2(user: Annotated[User2, Form()]):
 class User3(BaseModel):
     username: str = Form(...)
     password: int = Form(...)
-# 
+
+
 @app.post("/login3")
 def login3(user: Annotated[User3, Form()]):
     return user
