@@ -5,7 +5,6 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-
 @app.get("/async")
 async def async_endpoint():
     start = time.time()
