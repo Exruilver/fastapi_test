@@ -2,6 +2,7 @@ from typing import Dict
 from tortoise.contrib.fastapi import register_tortoise
 from fastapi import FastAPI
 
+
 """                        迁移配置文件 TORTOISE_ORM                        """
 
 app = FastAPI()
