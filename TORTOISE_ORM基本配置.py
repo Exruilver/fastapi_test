@@ -58,6 +58,8 @@ register_tortoise(
 
 # 注意要在项目的根路径下面运行这些命令
 # 以上配置完成后，可以使用 aerich 工具进行数据库迁移管理
+
+
 # 1. 初始化 aerich 配置：aerich init -t 配置文件路径.TORTOISE_ORM  
 #   这条命令会生成两个文件：pyproject.toml 和 migrations 目录
 #   toml 文件用于 aerich 的配置，migrations 目录用于存放迁移文件（就是生成的 SQL 语句文件）    
