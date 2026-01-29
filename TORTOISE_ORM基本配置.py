@@ -22,14 +22,14 @@ TORTOISE_ORM: Dict = {
         # 开发环境使用 SQLite 数据库
         # "default": "sqlite://db.sqlite3",
         # 生产环境使用 MySQL 数据库
-        "default": "mysql://root:123456@127.0.0.1:3306/fastapi_study_db",
+        "default": "mysql://root:123456@127.0.0.1:3306/fastapi_study_db2",
         # 生产环境示例：PostgreSQL 数据库
         # "default": "postgres://user:password@host:port/database"
     },
     "apps": {
         # models 配置，指定数据库模型的位置
         "models": {     
-            "models": ["model_fastapi_study", "aerich.models"],  
+            "models": ["model_fastapi_study2", "aerich.models"],  
             # "models": ["aerich.models", "your_app.models"],  # 应该写这个
             # 第二个 models 用于指定你自己的数据库模型位置
             # 第一个 models 是必须的，用于 aerich 进行数据库迁移管理

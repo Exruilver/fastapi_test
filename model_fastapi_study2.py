@@ -13,7 +13,8 @@ class User(Model):
     id = CharField(pk=True, max_length=36)
     name = CharField(max_length=50)
     email = CharField(max_length=100, unique=True)
-
+    is_active = BooleanField(default=True)
+    created_at = DateField(auto_now_add=True)
 
     class Meta:
         table = "users"                 # 指定数据库表名
